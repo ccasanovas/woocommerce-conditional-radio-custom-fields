@@ -3,8 +3,6 @@ Script que permite desplegar un select en función de un radio button plugin per
 
 woocommerce-conditional-datepicker-by-hour
 
-Plugin de woocommerce que permite configurar días de envío en función de la hora del día con PHP y datepicker // Plugin de woocommerce that allows to modificate delivery date by hours
-
 Copyright (C)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
