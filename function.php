@@ -121,47 +121,4 @@ if (!empty($_POST['daypart2']) || ($_POST['daypart2'])) {
 update_post_meta($order_id, 'Some Field',sanitize_text_field($safe_id));
 }};
 
-add_filter( 'woocommerce_checkout_fields' , 'bbloomer_display_checkbox_and_new_checkout_field' );
  
-function bbloomer_display_checkbox_and_new_checkout_field( $fields ) {
- 
-
-
-$fields['billing']['checkbox_trigger'] = array(
-    'type'      => 'checkbox',
-    'label'     => __('Checkbox label', 'woocommerce'),
-    'class'     => array('form-row-wide'),
-    'clear'     => true
-);   
-   
-$fields['billing']['new_billing_field'] = array(
-    'label'     => __('New Billing Field Label', 'woocommerce'),
-    'placeholder'   => _x('New Billing Field Placeholder', 'placeholder', 'woocommerce'),
-    'class'     => array('form-row-wide'),
-    'clear'     => true
-);
- 
-return $fields;
- 
-}
- 
-add_action( 'woocommerce_after_checkout_form', 'bbloomer_conditionally_hide_show_new_field', 6);
- 
-function bbloomer_conditionally_hide_show_new_field() {
-   
-  ?>
-   <script type="text/javascript">
-      jQuery('input#checkbox_trigger').change(function(){
-          
-         if (this.checked) {
-            jQuery('#new_billing_field_field').fadeOut();
-            jQuery('#new_billing_field_field input').val('');         
-         } else {
-            jQuery('#new_billing_field_field').fadeIn();
-         }
-          
-      });
-   </script>
-  <?php
-      
-}
