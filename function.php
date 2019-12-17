@@ -89,9 +89,9 @@ echo "</div>";
 <?php
 }
 
-/**
-/// ACTUALIZO EL VALOR DADO EN EL CARRITO 
-*/
+
+// ACTUALIZO EL VALOR DADO EN EL CARRITO 
+
 add_action('woocommerce_checkout_update_order_meta', 'custom_checkout_field_update_order_meta1');
 function custom_checkout_field_update_order_meta1($order_id)
 {
